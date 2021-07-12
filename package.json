@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.0",
     "aws-sdk": "^2.922.0",
     "chai": "^4.1.2",
     "chai-json-schema": "^1.5.1",
