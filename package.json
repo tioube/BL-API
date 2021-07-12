@@ -1,0 +1,56 @@
+{
+  "name": "bl-api",
+  "version": "1.0.0",
+  "description": "PreTest API Automation Bukalapak",
+  "main": "index.js",
+  "scripts": {
+    "test": "NOW=$(date \"+%d-%m-%Y-%H:%M:%S\") && mocha ./api/test/ --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/,reportFilename=mochaReport-${NOW},reportName=OttoTest,reportTitle=OttoTest,inlineAssets=true,charts=true  --timeout 2000 || true",
+    "login": "NOW=$(date \"+%d-%m-%Y-%H:%M:%S\") && mocha ./api/test/login-test.js --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/,reportFilename=mochaReport-${NOW},reportName=OttoTest,reportTitle=OttoTest,inlineAssets=true,charts=true  --timeout 2000",
+    "reports": "open 'reports/mochawesome/mochawesome.html'",
+    "junit": "mocha ./api/test --reporter mocha-junit-reporter --reporter-options mochaFile=./junitReport/test.xml",
+    "allure": "mocha ./api/test/ --recursive --reporter mocha-allure-reporter allure-report",
+    "allurereport": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "save:results": "node ./util/extract-report.js",
+    "runDev": "NODE_ENV=development npm run login"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tioube/BL-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.922.0",
+    "chai": "^4.1.2",
+    "chai-json-schema": "^1.5.1",
+    "chalk": "^4.1.0",
+    "custom-env": "^2.0.1",
+    "diff": "^5.0.0",
+    "dotenv": "^7.0.0",
+    "glob": "^7.1.2",
+    "json-stringify-safe": "^5.0.1",
+    "jsonpath": "^1.0.2",
+    "lodash.isempty": "^4.4.0",
+    "lodash.isfunction": "^3.0.9",
+    "lodash.isobject": "^3.0.2",
+    "lodash.isstring": "^4.0.1",
+    "mocha": "^9.0.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-uirecorder-zc": "^0.1.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "mysql": "^2.18.1",
+    "npm": "^7.16.0",
+    "proxyquire": "^2.1.3",
+    "readline-sync": "^1.4.10",
+    "set-tz": "^0.2.0",
+    "supertest": "^3.1.0",
+    "winston": "^2.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/tioube/BL-API/issues"
+  },
+  "homepage": "https://github.com/tioube/BL-API#readme"
+}
