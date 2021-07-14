@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-14T00:25:25.058Z",
+    "end": "2021-07-14T00:25:26.934Z",
+    "duration": 1876,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "adaeed25-152d-41e3-9f67-46a4c2856aff",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b7b63382-4fa8-45c1-8591-f99491e79e19",
+          "title": "Get Data Request",
+          "fullFile": "/Users/tio/gitlab/bukalapak-assignment/BL-API/api/test/postDataTest.js",
+          "file": "/api/test/postDataTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Get Data Request\"",
+              "fullTitle": "Get Data Request \"before all\" hook in \"Get Data Request\"",
+              "timedOut": false,
+              "duration": 1035,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n  this.data = await getData();\n  // console.log(\"masuk jugaaa\",this.data);\n} catch (err) {\n  console.error(err);\n}",
+              "err": {},
+              "uuid": "ec040837-66a9-4f30-b80e-ffc0d16b60f3",
+              "parentUUID": "b7b63382-4fa8-45c1-8591-f99491e79e19",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Schema is valid",
+              "fullTitle": "Get Data Request Schema is valid",
+              "timedOut": false,
+              "duration": 4,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(tv4.validate(this.data, dataSchema)).to.be.true;\ndelay;",
+              "err": {},
+              "uuid": "c4cb2a1d-9446-4839-922e-4eab9551c8c6",
+              "parentUUID": "b7b63382-4fa8-45c1-8591-f99491e79e19",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c4cb2a1d-9446-4839-922e-4eab9551c8c6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "17c40afb-0e41-4b24-a81f-a6406fcc605c",
+          "title": "Post Data Request",
+          "fullFile": "/Users/tio/gitlab/bukalapak-assignment/BL-API/api/test/postDataTest.js",
+          "file": "/api/test/postDataTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Post Data Request\"",
+              "fullTitle": "Post Data Request \"before all\" hook in \"Post Data Request\"",
+              "timedOut": false,
+              "duration": 818,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n  this.data = await postData();\n  // console.log(\"masuk jugaaa\",this.data);\n} catch (err) {\n  console.error(err);\n}",
+              "err": {},
+              "uuid": "72c96422-d8e0-48ff-8c49-91ddb2789a98",
+              "parentUUID": "17c40afb-0e41-4b24-a81f-a6406fcc605c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Compare Data with Request Data",
+              "fullTitle": "Post Data Request Compare Data with Request Data",
+              "timedOut": false,
+              "duration": 5,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// expect(tv4.validate(this.data, dataSchema)).to.be.true;\nconsole.log(\"request data\", reqBody)\nconsole.log(\"response data\", this.data.reqBody)\nexpect(tv4.validate(this.data.reqBody.title, reqBody.title)).to.be.true;\nexpect(tv4.validate(this.data.reqBody.body, reqBody.body)).to.be.true;\nexpect(tv4.validate(this.data.reqBody.userId, reqBody.userId)).to.be.true;\n// delay;",
+              "err": {},
+              "uuid": "b018f751-3b17-46f8-93cf-79343c361b51",
+              "parentUUID": "17c40afb-0e41-4b24-a81f-a6406fcc605c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b018f751-3b17-46f8-93cf-79343c361b51"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.0.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochaReport-14-07-2021-07:25:23",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/mochawesome/",
+        "reportFilename": "mochaReport-14-07-2021-07:25:23",
+        "reportName": "OttoTest",
+        "reportTitle": "BL-Test",
+        "inlineAssets": "true",
+        "charts": "true"
+      },
+      "version": "5.2.0"
+    }
+  }
+}

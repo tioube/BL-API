@@ -27,10 +27,10 @@ function delay(interval) {
   const getData = async () => {
     try {
       const ress = await post.getApi();
-      const datas = await ress.body;
+      // const datas = await ress.body;
     //   const d = await resLogin1.body;
       // console.log("masuk sini",datas)
-      return datas;
+      return ress;
     } catch (err) {
       console.log(err);
     }
@@ -41,14 +41,23 @@ function delay(interval) {
   describe(`Get Data Request`, () => {
     before(async () => {
       try {
-        this.data = await getData();
+        const resp = await getData();
+        this.data = await resp.body;
+        this.statusCode = await resp.statusCode;
         // console.log("masuk jugaaa",this.data);
       } catch (err) {
         console.error(err);
       }
     });
     it("Schema is valid", async () => {
+      
       expect(tv4.validate(this.data, dataSchema)).to.be.true;
+      delay;
+    });
+
+    it("Status Code 201", async () => {
+      
+      expect(tv4.validate(this.statusCode, 201)).to.be.true;
       delay;
     });
  
@@ -67,6 +76,7 @@ function delay(interval) {
       // expect(tv4.validate(this.data, dataSchema)).to.be.true;
       console.log("request data", reqBody)
       console.log("response data", this.data.reqBody)
+      expect(tv4.validate(this.data.reqBody, reqBody)).to.be.true;
       expect(tv4.validate(this.data.reqBody.title, reqBody.title)).to.be.true;
       expect(tv4.validate(this.data.reqBody.body, reqBody.body)).to.be.true;
       expect(tv4.validate(this.data.reqBody.userId, reqBody.userId)).to.be.true;

@@ -4,8 +4,7 @@
   "description": "PreTest API Automation Bukalapak",
   "main": "index.js",
   "scripts": {
-    "test": "NOW=$(date \"+%d-%m-%Y-%H:%M:%S\") && mocha ./api/test/ --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/,reportFilename=mochaReport-${NOW},reportName=OttoTest,reportTitle=OttoTest,inlineAssets=true,charts=true  --timeout 2000 || true",
-    "login": "NOW=$(date \"+%d-%m-%Y-%H:%M:%S\") && mocha ./api/test/login-test.js --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/,reportFilename=mochaReport-${NOW},reportName=OttoTest,reportTitle=OttoTest,inlineAssets=true,charts=true  --timeout 2000",
+    "test": "NOW=$(date \"+%d-%m-%Y-%H:%M:%S\") && mocha ./api/test/ --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/,reportFilename=mochaReport-${NOW},reportName=OttoTest,reportTitle=BL-Test,inlineAssets=true,charts=true  --timeout 2000 || true",
     "reports": "open 'reports/mochawesome/mochawesome.html'",
     "junit": "mocha ./api/test --reporter mocha-junit-reporter --reporter-options mochaFile=./junitReport/test.xml",
     "allure": "mocha ./api/test/ --recursive --reporter mocha-allure-reporter allure-report",

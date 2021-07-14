@@ -1,0 +1,208 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-07-14T00:31:24.624Z",
+    "end": "2021-07-14T00:31:26.462Z",
+    "duration": 1838,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6ac2d052-c8c3-4ed3-afc4-e572a513bf32",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5366a8b8-ca69-4e6b-8616-d41fd6754fdf",
+          "title": "Get Data Request",
+          "fullFile": "/Users/tio/gitlab/bukalapak-assignment/BL-API/api/test/postDataTest.js",
+          "file": "/api/test/postDataTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Get Data Request\"",
+              "fullTitle": "Get Data Request \"before all\" hook in \"Get Data Request\"",
+              "timedOut": false,
+              "duration": 912,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n  const resp = await getData();\n  this.data = await resp;\n  this.statusCode = await resp.statusCode;\n  // console.log(\"masuk jugaaa\",this.data);\n} catch (err) {\n  console.error(err);\n}",
+              "err": {},
+              "uuid": "d76a309c-a750-4bec-b69f-4a68f9674605",
+              "parentUUID": "5366a8b8-ca69-4e6b-8616-d41fd6754fdf",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Schema is valid",
+              "fullTitle": "Get Data Request Schema is valid",
+              "timedOut": false,
+              "duration": 5,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "expect(tv4.validate(this.data, dataSchema)).to.be.true;\ndelay;",
+              "err": {
+                "message": "AssertionError: expected false to be true",
+                "estack": "AssertionError: expected false to be true\n    at Context.<anonymous> (api/test/postDataTest.js:54:56)\n    at processImmediate (node:internal/timers:464:21)",
+                "diff": "- false\n+ true\n"
+              },
+              "uuid": "5b0bf7cc-deed-4aad-9338-77bfb75592da",
+              "parentUUID": "5366a8b8-ca69-4e6b-8616-d41fd6754fdf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Status Code 201",
+              "fullTitle": "Get Data Request Status Code 201",
+              "timedOut": false,
+              "duration": 3,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(tv4.validate(this.statusCode, 201)).to.be.true;\ndelay;",
+              "err": {},
+              "uuid": "1b7f7876-438e-442f-b2b6-fad40aa343b7",
+              "parentUUID": "5366a8b8-ca69-4e6b-8616-d41fd6754fdf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b7f7876-438e-442f-b2b6-fad40aa343b7"
+          ],
+          "failures": [
+            "5b0bf7cc-deed-4aad-9338-77bfb75592da"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "f7bea28f-65bb-438c-8464-14dd9a83ef94",
+          "title": "Post Data Request",
+          "fullFile": "/Users/tio/gitlab/bukalapak-assignment/BL-API/api/test/postDataTest.js",
+          "file": "/api/test/postDataTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Post Data Request\"",
+              "fullTitle": "Post Data Request \"before all\" hook in \"Post Data Request\"",
+              "timedOut": false,
+              "duration": 894,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n  this.data = await postData();\n  // console.log(\"masuk jugaaa\",this.data);\n} catch (err) {\n  console.error(err);\n}",
+              "err": {},
+              "uuid": "7d2d30f3-a579-4e35-9ba7-0d8b27b2d946",
+              "parentUUID": "f7bea28f-65bb-438c-8464-14dd9a83ef94",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Compare Data with Request Data",
+              "fullTitle": "Post Data Request Compare Data with Request Data",
+              "timedOut": false,
+              "duration": 8,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// expect(tv4.validate(this.data, dataSchema)).to.be.true;\nconsole.log(\"request data\", reqBody)\nconsole.log(\"response data\", this.data.reqBody)\nexpect(tv4.validate(this.data.reqBody, reqBody)).to.be.true;\nexpect(tv4.validate(this.data.reqBody.title, reqBody.title)).to.be.true;\nexpect(tv4.validate(this.data.reqBody.body, reqBody.body)).to.be.true;\nexpect(tv4.validate(this.data.reqBody.userId, reqBody.userId)).to.be.true;\n// delay;",
+              "err": {},
+              "uuid": "3ea19472-9163-462b-ab05-a5fa926c158f",
+              "parentUUID": "f7bea28f-65bb-438c-8464-14dd9a83ef94",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3ea19472-9163-462b-ab05-a5fa926c158f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.0.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochaReport-14-07-2021-07:31:23",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/mochawesome/",
+        "reportFilename": "mochaReport-14-07-2021-07:31:23",
+        "reportName": "OttoTest",
+        "reportTitle": "BL-Test",
+        "inlineAssets": "true",
+        "charts": "true"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
